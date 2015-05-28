@@ -1,3 +1,7 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%> 
+
 <%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -47,8 +51,14 @@ jQuery(function () {
       <li><a href="/WoojuProject/board/board_list">Poll board</a></li>
       <li><a href="/WoojuProject/aboutus">About Us</a></li>
       <li><a href="/WoojuProject/member/uinfo">MyPage</a></li>
-      <li><a href="/WoojuProject/member/logout">Logout</a></li>
-      
+      <c:choose>
+			<c:when test="${empty authMember }">
+				<li><a href="/WoojuProject/member/logout">Login</a></li>
+			</c:when>
+		<c:otherwise>
+			 <li><a href="/WoojuProject/member/logout">Logout</a></li>
+		</c:otherwise>
+	</c:choose>	
     </ul>
     <div class="clear"></div>
   </div>
