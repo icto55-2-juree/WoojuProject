@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>우주특공대-찬성/반대</title>
 <link rel="stylesheet" href="../layout/styles/layout.css"
 	type="text/css" />
 <script type="text/javascript" src="../layout/scripts/jquery.min.js"></script>
@@ -38,7 +38,7 @@
     </script>
 <style type="text/css">
 #boardContent {
-	font-size: 12px;
+	font-size: 19px;
 }
 #red{
 color:red

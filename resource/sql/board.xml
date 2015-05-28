@@ -41,7 +41,8 @@
 		<![CDATA[
 		SELECT bno, btitle, bimage
 		FROM board
-		WHERE bdate=(SELECT max(bdate) FROM board)
+		WHERE bdate=(SELECT max(bdate) FROM board) AND rownum<=1
+		ORDER BY bno desc
 		]]>  
 	</select>
 	

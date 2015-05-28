@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>우주특공대-게시글</title>
 <link rel="stylesheet" href="../layout/styles/layout.css" type="text/css" />
 <script type="text/javascript" src="../layout/scripts/jquery.min.js"></script>
 <!-- Superfish Menu -->
@@ -91,7 +91,7 @@ width: 800px;
             <tr>
               <th></th>
               <th width="500px">제목</th>
-              <th width="80px">날짜</th>
+              <th width="100px">날짜</th>
               <th width="80px">글쓴이</th>
               <th width="80px">진행상태</th>
               <th width="40px">조회수</th>

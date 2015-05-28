@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>우주특공대</title>
 <style type="text/css">
 	table{
 		width: 250px;
