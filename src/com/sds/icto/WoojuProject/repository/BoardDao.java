@@ -60,8 +60,14 @@ public class BoardDao {
 			return vo2;
 		}
 
+		public BoardVo getBoardtoMain3() {
+			BoardVo vo3 = (BoardVo)  sqlMapClientTemplate.queryForObject("board.getBoardtoMain3");
+			return vo3;
+		}
+
 		public void updateBstatus(int bno) {
 			sqlMapClientTemplate.update("board.updateBstatus", bno);
 			
 		}
+
 }

@@ -43,10 +43,15 @@ jQuery(function () {
           <div class="imgholder"><a href="/WoojuProject/board/getBoard?bno=${vo.bno }"><img src="../upload/${vo.bimage }" width="260" height="180" alt="" /></a></div>
           <p><a href="/WoojuProject/board/getBoard?bno=${vo.bno }">${vo.btitle }</a></p>
         </li>
-        <li class="last">
-        <p><strong>인기 게시글</strong></p>
+        <li>
+        <p><strong>최다 리플 게시글</strong></p>
           <div class="imgholder"><a href="/WoojuProject/board/getBoard?bno=${vo2.bno }"><img src="../upload/${vo2.bimage }" width="260" height="180" alt="" /></a></div>
           <p><a href="/WoojuProject/board/getBoard?bno=${vo2.bno }">${vo2.btitle }</a></p>
+        </li>
+        <li class="last">
+        <p><strong>최다 조회 게시글</strong></p>
+          <div class="imgholder"><a href="/WoojuProject/board/getBoard?bno=${vo3.bno }"><img src="../upload/${vo3.bimage }" width="260" height="180" alt="" /></a></div>
+          <p><a href="/WoojuProject/board/getBoard?bno=${vo3.bno }">${vo3.btitle }</a></p>
         </li>
       </ul>
       <br class="clear" />

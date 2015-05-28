@@ -36,6 +36,8 @@ public class MemberController {
 		model.addAttribute("vo", boardVo);
 		BoardVo boardVo2 = boardService.getBoardtoMain2();
 		model.addAttribute("vo2", boardVo2);
+		BoardVo boardVo3 = boardService.getBoardtoMain3();
+		model.addAttribute("vo3", boardVo3);
 		
 		MemberVo memberVo = memberService.authUser(vo);
 		
