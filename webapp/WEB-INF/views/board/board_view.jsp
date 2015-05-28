@@ -115,7 +115,7 @@ color:red
 
 					<h2>Write A Comment</h2>
 					<div id="respond">
-						<form action="/WoojuProject/reply/insertReply" method="post">
+						<form action="/WoojuProject/board/insertReply" method="post">
 							<input type="hidden" name="mid" id="mid"
 								value="${authMember.mid }" size="22" /> <input type="hidden"
 								name="bno" id="bno" value="${vo.bno }">
@@ -137,6 +137,8 @@ color:red
 			</div>
 		</div>
 	</div>
-
+<div id="footer">
+		<c:import url="/WEB-INF/views/include/footer.jsp" />
+	</div>
 </body>
 </html>

@@ -101,6 +101,20 @@ public class BoardController {
 		
 		boardService.updateBstatus(bno);
 		
-		return "redirect:board_list";
+		return "redirect:/board/getBoard?bno=" + bno;
 	}
+	
+	@RequestMapping(value="/insertReply", method=RequestMethod.POST)
+	public String insertReply(HttpSession session,
+			@RequestParam("mid") String mid,
+			@RequestParam("bno") int bno,
+			@RequestParam("rcontent") String rcontent
+			) throws IllegalStateException, IOException{
+		
+			replyService.insertReply(session, mid, bno, rcontent);
+		
+			return "redirect:/board/getBoard?bno=" + bno;
+						
+	}
+	
 }

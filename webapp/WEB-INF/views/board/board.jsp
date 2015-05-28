@@ -123,6 +123,8 @@ width: 800px;
     </div>
   </div>
 </div>
-
+<div id="footer">
+		<c:import url="/WEB-INF/views/include/footer.jsp" />
+	</div>
 </body>
 </html>
