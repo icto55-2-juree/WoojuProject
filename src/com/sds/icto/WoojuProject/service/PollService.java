@@ -15,59 +15,55 @@ import com.sds.icto.WoojuProject.domain.PollVo;
 import com.sds.icto.WoojuProject.repository.BoardDao;
 import com.sds.icto.WoojuProject.repository.PollDao;
 
-
 @Service
 public class PollService {
 
 	@Autowired
 	PollDao pollDao;
-	
+
 	@Autowired
 	BoardDao boardDao;
 
-	
-public void insert(HttpServletRequest req, HttpSession session, int bno, String result) {
-	MemberVo authMember = (MemberVo) session.getAttribute("authMember");
-	PollVo vo = new PollVo();
-	vo.setBno(bno);
-	vo.setMid(authMember.getMid());
-	if(result.equals("ppro")){
-		vo.setPpro(1);
-		vo.setPcon(0);
-	}else{
-		vo.setPpro(0);
-		vo.setPcon(1);
+	public void insert(HttpServletRequest req, HttpSession session, int bno,
+			String result) {
+		MemberVo authMember = (MemberVo) session.getAttribute("authMember");
+		PollVo vo = new PollVo();
+		vo.setBno(bno);
+		vo.setMid(authMember.getMid());
+		if (result.equals("ppro")) {
+			vo.setPpro(1);
+			vo.setPcon(0);
+		} else {
+			vo.setPpro(0);
+			vo.setPcon(1);
+		}
+		pollDao.insert(vo);
 	}
-	boardDao.updatePoll(bno);
-	pollDao.insert(vo);
-}
 
-public PollVo getPoll(PollVo vo){
-	
-	PollVo pollVo = pollDao.getPoll(vo);
-	
-	return pollVo;
-}
+	public PollVo getPoll(PollVo vo) {
 
-public int getPpro(int bno){
-	
-	int cnt = pollDao.getPpro(bno);
-	
-	return cnt; 
-}
+		PollVo pollVo = pollDao.getPoll(vo);
 
-public int getPcon(int bno){
-	
-	int cnt2 = pollDao.getPcon(bno);
-	
-	return cnt2; 
-}
+		return pollVo;
+	}
 
-public List<PollVo> fetchList(int bno){ 
-		
-	return pollDao.fetchList(bno);
-}
+	public int getPpro(int bno) {
 
+		int cnt = pollDao.getPpro(bno);
 
+		return cnt;
+	}
+
+	public int getPcon(int bno) {
+
+		int cnt2 = pollDao.getPcon(bno);
+
+		return cnt2;
+	}
+
+	public List<PollVo> fetchList(int bno) {
+
+		return pollDao.fetchList(bno);
+	}
 
 }

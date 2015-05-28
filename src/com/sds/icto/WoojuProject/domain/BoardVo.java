@@ -13,14 +13,13 @@ public class BoardVo {
 	private String bimage;
 	private String bcontent;
 	private int rno_cnt;
-	private int pstatus;
+	
 	public BoardVo() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	public BoardVo(int bno, String mid, String btitle, String bdate,
-			String bstatus, int bview_cnt, String bimage, String bcontent, int rno_cnt ,
-			int pstatus) {
+			String bstatus, int bview_cnt, String bimage, String bcontent, int rno_cnt) {
 		super();
 		this.bno = bno;
 		this.mid = mid;
@@ -31,7 +30,7 @@ public class BoardVo {
 		this.bimage = bimage;
 		this.bcontent = bcontent;
 		this.rno_cnt = rno_cnt;
-		this.pstatus = pstatus;
+		
 	}
 	public int getBno() {
 		return bno;
@@ -87,12 +86,7 @@ public class BoardVo {
 	public void setRno_cnt(int rno_cnt) {
 		this.rno_cnt = rno_cnt;
 	}
-	public int getPstatus() {
-		return pstatus;
-	}
-	public void setPstatus(int pstatus) {
-		this.pstatus = pstatus;
-	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -113,9 +107,7 @@ public class BoardVo {
 		builder.append(", bcontent=");
 		builder.append(bcontent);
 		builder.append(", rno_cnt=");
-		builder.append(rno_cnt);
-		builder.append(", pstatus=");
-		builder.append(pstatus);
+		builder.append(rno_cnt);	
 		builder.append("]");
 		return builder.toString();
 	}

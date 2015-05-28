@@ -45,12 +45,7 @@ public class BoardDao {
 			sqlMapClientTemplate.insert("board.insert", vo);
 			
 		}
-		
-		//투표 
-		public void updatePoll(int bno) {
-			sqlMapClientTemplate.update("board.updatePoll", bno);
-		}
-		
+			
 		public void updateRno_cnt(int bno) {
 			sqlMapClientTemplate.update("reply.updateRno_cnt", bno);
 		}
@@ -69,30 +64,4 @@ public class BoardDao {
 			sqlMapClientTemplate.update("board.updateBstatus", bno);
 			
 		}
-		
-
-		
-	/*
-	
-	//no받아서 글 삭제
-	public void delete(int no ){
-		sqlMapClientTemplate.delete("board.delete", no);
-	}
-
-
-	
-	//글 수정
-	@SuppressWarnings("unchecked")
-	public void updateBoard(int no, String title, String content){
-		Map map = new HashMap();
-		map.put("no", no);
-		map.put("title", title);
-		map.put("content", content);
-		sqlMapClientTemplate.update("board.updateBoard", map);
-		
-	}
-	*/
-	
-	
-	
 }

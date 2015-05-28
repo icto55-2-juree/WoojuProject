@@ -26,17 +26,10 @@
 		<![CDATA[
 		insert
 		  into board
-		values ( board_seq.nextval, #mid#, #btitle#, sysdate, #bstatus#, #bview_cnt#, #bimage#, #bcontent#, #rno_cnt#, #pstatus# )
+		values ( board_seq.nextval, #mid#, #btitle#, sysdate, #bstatus#, #bview_cnt#, #bimage#, #bcontent#, #rno_cnt# )
 		]]>  
 	</insert>
-	
-	<update id="updatePoll" parameterClass="java.lang.Integer">
-		<![CDATA[
-		update board set pstatus=pstatus+1 where bno=#bno#
-		]]>  
-	</update> 
-	
-	
+		
 	<update id="updateBstatus" parameterClass="java.lang.Integer">
 		<![CDATA[
 		update board set bstatus='진행완료' where bno=#bno#

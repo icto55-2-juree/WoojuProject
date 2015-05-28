@@ -60,7 +60,7 @@ public void insertBoard(HttpServletRequest req, HttpSession session, String btit
 	vo.setBview_cnt(0);
 	vo.setBstatus("진행중");
 	vo.setRno_cnt(0);
-	vo.setPstatus(0);
+	
 	
 	boardDao.insert(vo);
 	
