@@ -56,7 +56,8 @@
 		<![CDATA[
 		SELECT bno, btitle, bimage
 		FROM board
-		WHERE rno_cnt=(SELECT max(rno_cnt) FROM board)
+		WHERE rno_cnt=(SELECT max(rno_cnt) FROM board ) AND rownum<=1
+		ORDER BY bno desc
 		]]>  
 	</select>
 
