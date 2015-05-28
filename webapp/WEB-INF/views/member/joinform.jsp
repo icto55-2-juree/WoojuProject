@@ -68,18 +68,20 @@ $(document).ready(function(){
 	<!--  값 입력후 같은 곳으로 간다면, 액션값을 안써줘도 무방 -->
 	<form id="join-form" name="joinForm" method="post"
 		action="/WoojuProject/member/join">
-		<p>
+		<div id="kk">
+			<img src="../images/space.png">
+		</div>
+		<div id="juree">
 			<label class="block-label" for="mid">아이디</label> <input id="mid"
 				name="mid" type="text" value=""> <input id="check-btn"
 				type="button" value="중복체크">
-		</p>
+		</div>
 
-		<p>
+		<div id="woo">
 			<label class="block-label">패스워드</label> <input name="mpassword"
 				type="password" value="">
-		</p>
-		<input type="submit" value="가입하기">
-
+				<input type="submit" value="가입하기">
+		</div>
 	</form>
 	<div id="footer">
 		<c:import url="/WEB-INF/views/include/footer.jsp" />
