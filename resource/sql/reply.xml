@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="reply">
+	<typeAlias alias="ReplyVo" type="com.sds.icto.WoojuProject.domain.ReplyVo" />
+	
+	<select id="list" resultClass="ReplyVo" parameterClass="java.lang.Integer">
+		<![CDATA[
+		select rno, mid, bno, to_char(rdate, 'yyyy-mm-dd') as rdate, rcontent FROM reply
+		WHERE bno=#bno# order by rno 
+		]]>  
+	</select>
+	
+	<insert id="insert" parameterClass="ReplyVo">
+		<![CDATA[
+		insert
+		  into reply
+		values ( reply_seq.nextval, #mid#, #bno#, sysdate, #rcontent# )
+		]]>  
+	</insert>
+	
+	<update id="updateRno_cnt" parameterClass="java.lang.Integer">
+		<![CDATA[
+		update board set rno_cnt=rno_cnt+1 where bno=#bno#
+		]]>  
+	</update>
+</sqlMap> 

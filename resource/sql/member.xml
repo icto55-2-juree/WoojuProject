@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="member">
+	<typeAlias alias="MemberVo" type="com.sds.icto.WoojuProject.domain.MemberVo" />
+
+	<insert id="insert" parameterClass="MemberVo">
+		<![CDATA[
+		insert
+		  into member
+		values ( #mid#, #mpassword# )
+		]]>  
+	</insert>
+	
+	<select id="getMember" parameterClass="MemberVo" resultClass="MemberVo">
+		<![CDATA[
+		select * from member where mid=#mid# and mpassword=#mpassword#
+		]]>  
+	</select>
+	
+	<update id="uinfo" parameterClass="java.util.Map">
+		<![CDATA[
+		update member set mpassword=#mpassword# 
+		where mid=#mid#
+		]]>  
+	</update>
+	
+	<select id="selectBymid" resultClass="MemberVo" parameterClass="String">
+		<![CDATA[
+			select * from member where mid=#mid#
+		]]>	
+	</select>
+	
+</sqlMap> 

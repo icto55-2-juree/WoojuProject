@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="board">
+	<typeAlias alias="BoardVo" type="com.sds.icto.WoojuProject.domain.BoardVo" />
+
+	<select id="list" resultClass="BoardVo">
+		<![CDATA[
+		select bno, btitle, to_char(bdate, 'yyyy-mm-dd') as bdate, mid, bstatus, bview_cnt, rno_cnt from board order by bno desc
+		]]>  
+	</select>
+	
+	<select id="getBoard" resultClass="BoardVo" parameterClass="java.lang.Integer">
+		<![CDATA[
+		select *
+		  from board where bno=#value#
+		]]>  
+	</select>
+	
+	<update id="updateCnt" parameterClass="java.lang.Integer">
+		<![CDATA[
+		update board set bview_cnt=bview_cnt+1 where bno=#bno#
+		]]>  
+	</update> 
+	
+	<insert id="insert" parameterClass="BoardVo">
+		<![CDATA[
+		insert
+		  into board
+		values ( board_seq.nextval, #mid#, #btitle#, sysdate, #bstatus#, #bview_cnt#, #bimage#, #bcontent#, #rno_cnt#, #pstatus# )
+		]]>  
+	</insert>
+	
+	<update id="updatePoll" parameterClass="java.lang.Integer">
+		<![CDATA[
+		update board set pstatus=pstatus+1 where bno=#bno#
+		]]>  
+	</update> 
+	
+	
+	<update id="updateBstatus" parameterClass="java.lang.Integer">
+		<![CDATA[
+		update board set bstatus='진행완료' where bno=#bno#
+		]]>  
+	</update> 
+	
+	
+	<select id="getBoardtoMain" resultClass="BoardVo">
+		<![CDATA[
+		SELECT bno, btitle, bimage
+		FROM board
+		WHERE bdate=(SELECT max(bdate) FROM board)
+		]]>  
+	</select>
+	
+	<select id="getBoardtoMain2" resultClass="BoardVo">
+		<![CDATA[
+		SELECT bno, btitle, bimage
+		FROM board
+		WHERE rno_cnt=(SELECT max(rno_cnt) FROM board)
+		]]>  
+	</select>
+
+</sqlMap> 

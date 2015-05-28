@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="poll">
+	<typeAlias alias="PollVo" type="com.sds.icto.WoojuProject.domain.PollVo" />
+
+	
+	
+	<insert id="insert" parameterClass="PollVo">
+		<![CDATA[
+		insert
+		  into poll
+		values ( poll_seq.nextval, #mid#, #bno#, #ppro#, #pcon# )
+		]]>  
+	</insert>
+
+	<select id="getPoll" resultClass="PollVo" parameterClass="PollVo">
+		<![CDATA[
+		select ppro, pcon from poll where mid=#mid# and bno=#bno#
+		]]>  
+	</select>
+	
+	<select id="getPpro" resultClass="java.lang.Integer" parameterClass="java.lang.Integer">
+		<![CDATA[
+		select count(*) as cnt from poll where bno=#value# and ppro=1
+		]]>  
+	</select>
+	
+	<select id="getPcon" resultClass="java.lang.Integer" parameterClass="java.lang.Integer">
+		<![CDATA[
+		select count(*) as cnt2 from poll where bno=#value# and pcon=1
+		]]>  
+	</select>
+	
+	<select id="getMid" resultClass="PollVo" parameterClass="java.lang.Integer">
+		<![CDATA[
+		select mid from poll where bno=#value#
+		]]>  
+	</select>
+	
+	
+	<!-- <delete id="delete" parameterClass="java.lang.Integer">
+		<![CDATA[
+		delete from board where no=#no#
+		]]>
+	</delete>
+	
+	
+	
+	
+	<update id="updateBoard" parameterClass="java.util.Map">
+		<![CDATA[
+		update board set title=#title#, content=#content# 
+		where no=#no#
+		]]>  
+	</update>
+	
+	-->
+</sqlMap> 
