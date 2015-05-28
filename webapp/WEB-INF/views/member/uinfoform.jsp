@@ -48,7 +48,7 @@ p{
 				<form id="uinfo" name="uinfo" method="post" action="/WoojuProject/member/uinfo">
 					<input type="hidden" name="mid" value="${authMember.mid}">
 					<p> 비밀번호 수정하기 </p>
-					<div id="woo">
+					<div id="woo2ree">
 					<label class="block-label">패스워드</label>
 					<input name="mpassword" type="password" value="">
 										
